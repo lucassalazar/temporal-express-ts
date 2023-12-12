@@ -6,9 +6,9 @@ const { initiateSigning, completeSigning, checkStatus } = wf.proxyActivities<typ
 });
 
 export async function signMessageWorkflow(id: string, message: string, privateKey: string): Promise<void> {
-  await initiateSigning(id, message, privateKey);
+  const { signedMessage } = await initiateSigning(id, message, privateKey);
   await wf.sleep('1 minute'); // sleep for one minute before updating the signing status
-  await completeSigning(id);
+  await completeSigning(id, signedMessage);
 }
 
 export async function checkStatusWorkflow(
