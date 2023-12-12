@@ -1,5 +1,4 @@
-import { TemporalService } from './temporal.service';
-import { CryptoService } from './crypto.service';
+import { TemporalService, CryptoService } from '.';
 import { signMessageWorkflow, checkStatusWorkflow } from '../workflows';
 import { nanoid } from 'nanoid';
 
